@@ -1,27 +1,102 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>100 Days Journal</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Kiwi+Maru:wght@400;500&family=Zen+Kurenaido&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#465c4d">
+  <meta name="app-version" content="2.0.0-assets">
+  <title>100日ジャーナル｜100 Days Journal</title>
+  <link rel="icon" href="assets/sunflower.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Kiwi+Maru:wght@400;500&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.v2.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="app.v2.js"></script>
 </head>
 <body>
-<div id="authGate" class="auth-gate"><div class="login-card"><span class="login-flower">❀</span><p class="eyebrow">PRIVATE JOURNAL</p><h2>おかえりなさい。</h2><p>この書斎は、ログインした人だけ。</p><form id="loginForm"><input id="email" type="email" placeholder="メールアドレス" autocomplete="email" required><input id="password" type="password" placeholder="パスワード" autocomplete="current-password" required><button type="submit">書斎へ入る</button><p id="loginMsg" class="login-msg"></p></form></div></div>
-<div id="appShell" hidden>
-<main class="journal-v1">
-<header class="topbar"><span>100 DAYS JOURNAL</span><button id="logoutBtn" class="top-logout">logout</button></header>
-<section class="cover"><div class="cover-flower f-a">🌻</div><div class="cover-flower f-b">🌷</div><div class="cover-flower f-c">🌿</div><span class="cover-tape"></span><p class="kicker">A LITTLE BOOK OF QUESTIONS</p><h1><span>100</span> Days<br><em>Journal</em></h1><p class="cover-copy">100の問いと、寄り道する書斎。</p><div class="cover-label">SEP 25 — DEC 31 · 2026</div><div class="cover-sticker">答えたい日に<br>答えたい問いを。</div></section>
-<nav class="tabs"><button class="tab active" data-target="today">TODAY</button><button class="tab" data-target="original">ORIGINAL</button><button class="tab" data-target="follow">FOLLOW</button><button class="tab" data-target="scraps">SCRAPS</button></nav>
-<section id="today" class="page-panel active"><div class="page-head"><span class="stamp">TODAY</span><h2>今日のページ</h2><p>ひとつだけ、開いてみる。</p></div><article class="question-sheet"><span class="washitape"></span><p>QUESTION OF THE DAY</p><div class="q-day">027</div><h3>最近、「いい匂いだな」と思って<br>立ち止まったのは、どんな匂い？</h3><p>03｜からだと感覚</p><button class="talk">☕ 篤史と話す</button></article><div class="tiny-scraps"><span>🌼</span><p>うまく答えなくていい。<br>寄り道も、今日のページ。</p><span>📎</span></div></section>
-<section id="original" class="page-panel"><div class="page-head"><span class="stamp green-stamp">ORIGINAL</span><h2>100の問い</h2><p>10の章。どこからでも。</p></div><div class="chapter-grid"><button><b>01</b><span>いまの私</span><i>🌱</i></button><button><b>02</b><span>好きと嫌い</span><i>🌷</i></button><button><b>03</b><span>からだと感覚</span><i>🍋</i></button><button><b>04</b><span>人とのあいだ</span><i>🫧</i></button><button><b>05</b><span>選ぶ私</span><i>✂️</i></button><button><b>06</b><span>これまでの私</span><i>📜</i></button><button><b>07</b><span>まだ知らない私</span><i>🪻</i></button><button><b>08</b><span>世界を見る私</span><i>🌍</i></button><button><b>09</b><span>遊ぶ私</span><i>🎈</i></button><button><b>10</b><span>これからの私</span><i>🌻</i></button></div></section>
-<section id="follow" class="page-panel"><div class="page-head"><span class="stamp yellow-stamp">FOLLOW</span><h2>Journal Shelf</h2><p>気になる一冊だけ。</p></div><div class="journal-covers"><button class="jc sunflower"><small>FOLLOW 01</small><span>🌻</span><strong>hotate_mom</strong></button><button class="jc tulip"><small>FOLLOW 02</small><span>🌷</span><strong>parumama_journalll</strong></button><button class="jc berry"><small>FOLLOW 03</small><span>🫐</span><strong>i_am_aioh</strong></button><button class="jc leaf"><small>FOLLOW 04</small><span>🌿</span><strong>haruko117</strong></button><button class="jc violet"><small>FOLLOW 05</small><span>🪻</span><strong>empty shelf</strong></button><button class="jc orange"><small>FOLLOW 06</small><span>🍊</span><strong>empty shelf</strong></button></div></section>
-<section id="scraps" class="page-panel"><div class="page-head"><span class="stamp purple-stamp">SCRAPS</span><h2>Little Findings</h2><p>おしゃべりの途中で拾ったもの。</p></div><div class="scrap-wall"><div class="scrap s1">「慈悲はある。<br>境界線はもっとある。」<span>✦</span></div><div class="scrap s2">ここには、小さな発見が増えていく。<span>🌿</span></div><div class="scrap s3">Favorites<br><small>もう一度ひらきたい問い</small><span>⭐</span></div></div></section>
-<footer class="v1-footer">まだ開いていない問いも、ちゃんと本棚にいる。</footer></main>
-
-</div>
-<div class="toast" id="toast"></div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="app.js"></script>
-</body></html>
+  <section id="authGate" class="auth-gate" aria-labelledby="loginTitle">
+    <div class="login-card paper">
+      <span class="tape" aria-hidden="true"></span>
+      <img class="login-bloom art" src="assets/sunflower.webp" width="65" height="77" alt="">
+      <p class="eyebrow">PRIVATE JOURNAL</p>
+      <h1 id="loginTitle">おかえりなさい。</h1>
+      <p class="muted">あなたの言葉を、あなたの書斎に。</p>
+      <form id="loginForm">
+        <label for="email">メールアドレス</label>
+        <input id="email" type="email" autocomplete="email" autocapitalize="none" spellcheck="false" required>
+        <label for="password">パスワード</label>
+        <input id="password" type="password" autocomplete="current-password" required>
+        <button class="primary" id="loginSubmit" type="submit" disabled>書斎へ入る <span aria-hidden="true">→</span></button>
+        <p id="loginMsg" class="form-message" role="status" aria-live="polite">ログイン状態を確認しています…</p>
+      </form>
+      <img class="login-books art" src="assets/books.webp" width="124" height="95" alt="">
+      <small class="edition">装丁版 2.0 · 100 Days Journal</small>
+    </div>
+  </section>
+  <div id="appShell" hidden>
+    <main class="atelier" id="atelier" data-view="today">
+      <header class="topbar">
+        <a class="brand" href="#today" aria-label="今日のページへ">100 Days <em>Journal</em></a>
+        <button id="logoutBtn" class="logout" type="button">ログアウト</button>
+      </header>
+      <div class="workspace">
+        <section class="cover paper" aria-labelledby="coverTitle">
+          <span class="tape cover-tape" aria-hidden="true"></span>
+          <div class="cover-text">
+            <p class="eyebrow">A LITTLE BOOK OF QUESTIONS</p>
+            <h2 id="coverTitle"><span>100</span> Days<br><em>Journal</em></h2>
+            <p class="cover-subtitle">100の問いと、<br>寄り道する書斎。</p>
+          </div>
+          <div class="floral-collage art" aria-hidden="true"><img src="assets/floral-top.webp" width="220" height="162" alt=""><img src="assets/floral-base.webp" width="220" height="162" alt=""></div>
+          <img class="cover-coffee art" src="assets/coffee-small.webp" width="140" height="121" alt="">
+          <div class="cover-note">答えたい日に、<br>答えたい問いを。</div>
+          <span class="postmark" aria-hidden="true">LITTLE MOMENTS<br>2026 · JOURNAL</span>
+        </section>
+        <div class="book-body">
+          <nav class="tabs" aria-label="ジャーナルのページ" role="tablist">
+            <button class="tab active" id="tab-today" role="tab" aria-selected="true" aria-controls="today" data-target="today"><span>今日のページ</span><small>TODAY</small></button>
+            <button class="tab" id="tab-original" role="tab" aria-selected="false" aria-controls="original" tabindex="-1" data-target="original"><span>100の問い</span><small>ORIGINAL</small></button>
+            <button class="tab" id="tab-follow" role="tab" aria-selected="false" aria-controls="follow" tabindex="-1" data-target="follow"><span>追いかけ本棚</span><small>FOLLOW</small></button>
+            <button class="tab" id="tab-scraps" role="tab" aria-selected="false" aria-controls="scraps" tabindex="-1" data-target="scraps"><span>ことばと栞</span><small>SCRAPS</small></button>
+          </nav>
+          <section id="today" class="page-panel" role="tabpanel" aria-labelledby="tab-today">
+            <div class="section-heading"><div><span class="ribbon">TODAY'S DESK</span><h2>今日のページ</h2><p>珈琲ひとくち、問いをひとつ。</p></div><img class="heading-art art" src="assets/books.webp" width="124" height="95" alt=""></div>
+            <article class="question-sheet paper">
+              <span class="tape question-tape" aria-hidden="true"></span>
+              <div class="question-meta"><span id="questionJournal">Original 100</span><span id="questionMode">設問プレビュー</span></div>
+              <p class="day-label">DAY <strong id="questionDay">001</strong></p>
+              <h3 id="questionText">今の自分を、天気ではなく「時間帯」に例えるなら何時ごろ？</h3>
+              <p id="questionChapter" class="chapter-label">01｜いまの私</p>
+              <img class="pressed-flower art" src="assets/pink-flower.webp" width="85" height="124" alt="">
+              <button class="primary talk" id="talkBtn" type="button"><img src="assets/coffee-small.webp" width="140" height="121" alt="">篤史と話す <span aria-hidden="true">→</span></button>
+              <div id="answerArea" class="answer-area" hidden><h4>残した答え</h4><p id="answerText"></p><div id="discoveryArea" hidden><h4>おしゃべりの途中で</h4><p id="discoveryText"></p></div></div>
+            </article>
+            <div class="desk-note"><img class="art" src="assets/sunflower.webp" width="65" height="77" alt=""><p>一言からでも、寄り道からでも。<br>ここは、あなたの言葉が育つ場所。</p></div>
+          </section>
+          <section id="original" class="page-panel" role="tabpanel" aria-labelledby="tab-original" hidden>
+            <div class="section-heading"><div><span class="ribbon sage">ORIGINAL EDITION</span><h2>100の問い</h2><p>10の章を、好きな順番で。</p></div><img class="heading-art art" src="assets/books.webp" width="124" height="95" alt=""></div>
+            <div id="chapterGrid" class="chapter-grid"></div>
+            <p class="shelf-note">急がなくていい。今日は、どの扉をひらく？</p>
+          </section>
+          <section id="follow" class="page-panel" role="tabpanel" aria-labelledby="tab-follow" hidden>
+            <div class="section-heading"><div><span class="ribbon honey">FOLLOW JOURNALS</span><h2>問いの本棚</h2><p>気になった一冊に、そっと栞を。</p></div><img class="heading-art art" src="assets/pink-flower.webp" width="85" height="124" alt=""></div>
+            <div id="journalCovers" class="journal-covers"></div>
+            <p class="shelf-note">全部追わなくていい。好きな問いだけ。</p>
+          </section>
+          <section id="scraps" class="page-panel" role="tabpanel" aria-labelledby="tab-scraps" hidden>
+            <div class="section-heading"><div><span class="ribbon lilac">LITTLE FINDINGS</span><h2>ことばと栞</h2><p>おしゃべりの途中で拾ったもの。</p></div><img class="heading-art art" src="assets/pink-flower.webp" width="85" height="124" alt=""></div>
+            <div class="scrap-switch"><button type="button" data-scrap="discoveries" class="selected" aria-pressed="true">拾ったことば</button><button type="button" data-scrap="favorites" aria-pressed="false">お気に入りの問い</button></div>
+            <div id="scrapWall" class="scrap-wall"></div>
+          </section>
+          <div class="sync-strip"><p id="syncStatus" role="status">Notionの自動同期は未接続。確認済みの設問をプレビュー表示。</p><button id="refreshBtn" type="button">表示を更新</button></div>
+        </div>
+      </div>
+      <footer class="footer"><span>Small words, little discoveries.</span><small>装丁版 2.0 · 2.0.0-assets</small></footer>
+    </main>
+  </div>
+  <dialog id="readerDialog" class="reader-dialog paper" aria-labelledby="dialogTitle"><div class="dialog-head"><h2 id="dialogTitle"></h2><button id="closeDialog" class="close" type="button" aria-label="閉じる">×</button></div><div id="dialogBody"></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript>このジャーナルのログインとページ切り替えにはJavaScriptが必要です。</noscript>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "version": "2.0.0-assets",
+  "release": "generated-artwork-integration",
+  "canonical_store": "Notion",
+  "notion_auto_sync": "not_implemented",
+  "questions_fallback": "explicit_preview_day_1",
+  "private_answers_in_static_files": false,
+  "assets": ["sunflower.webp", "pink-flower.webp", "books.webp", "coffee-small.webp", "floral-top.webp", "floral-base.webp"],
+  "local_test": {"engine":"Chromium", "widths":[320,375,390,430,1280], "auth_transport":"mocked", "device_test":"not_yet", "panels_per_width":4}
+}
