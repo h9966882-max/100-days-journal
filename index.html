@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div id="authGate" class="auth-gate"><div class="login-card"><span class="login-flower">❀</span><p class="eyebrow">PRIVATE JOURNAL</p><h2>おかえりなさい。</h2><p>この書斎は、ログインした人だけ。</p><form id="loginForm"><input id="email" type="email" placeholder="メールアドレス" autocomplete="email" required><input id="password" type="password" placeholder="パスワード" autocomplete="current-password" required><button type="submit">書斎へ入る</button><p id="loginMsg" class="login-msg"></p></form></div></div>
+<div id="appShell" hidden>
 <main class="journal">
   <section class="hero">
     <span class="tape tape-a"></span><span class="tape tape-b"></span>
@@ -49,6 +51,9 @@
   </section>
   <footer>答えたい日に、答えたい問いを。<br><b>未回答は「遅れ」ではなく、まだ開いていない問い。</b></footer>
 </main>
+<button id="logoutBtn" class="logout" type="button">ログアウト</button>
+</div>
 <div class="toast" id="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="app.js"></script>
 </body></html>
