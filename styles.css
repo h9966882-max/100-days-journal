@@ -12,3 +12,21 @@ footer{text-align:center;padding:12px 25px 45px;font-size:11px;line-height:1.8;c
 @media(min-width:700px){body{padding:30px}.journal{border-radius:10px}.cards{grid-template-columns:repeat(4,1fr)}.card{min-height:190px}.journal{width:min(920px,94vw)}.hero{padding-left:60px}.desk,.shelf{padding-left:50px;padding-right:50px}}
 .auth-gate{min-height:100vh;display:grid;place-items:center;padding:28px;background:linear-gradient(145deg,#d8cdb8,#b8c6b0)}
 .login-card{width:min(100%,390px);background:#f8f0df;padding:42px 28px 32px;border-radius:8px;box-shadow:8px 10px 0 #6e675644;position:relative;text-align:center;border:1px solid #c9bea8}.login-card:before{content:"";position:absolute;width:100px;height:28px;background:#d7b6ad99;top:-10px;left:50%;transform:translateX(-50%) rotate(-3deg)}.login-flower{font-size:42px;color:#7f9b79}.login-card h2{font:32px "DM Serif Display","Kiwi Maru";margin:8px}.login-card>p{font-size:12px}.login-card form{display:grid;gap:12px;margin-top:25px}.login-card input{width:100%;padding:14px 16px;border:1px solid #b7ad98;background:#fffaf0;border-radius:4px;font:14px "Kiwi Maru"}.login-card button{padding:14px;border:0;border-radius:28px;background:#a9bfa5;color:#3f463c;font:bold 14px "Kiwi Maru";box-shadow:2px 3px 0 #7c8c7833}.login-msg{min-height:18px;color:#a15f58!important}.logout{display:block;margin:0 auto 35px;border:0;background:transparent;text-decoration:underline;color:#756f64;font-family:inherit;font-size:11px}
+/* v0.2: auth gate must never occupy layout after login */
+.auth-gate[hidden],#appShell[hidden]{display:none!important}
+body.is-authenticated .auth-gate{display:none!important}
+body.is-authenticated{background:#d9d1bd}
+
+/* Visual PoC v0.2 — softer stationery, less LP */
+.journal{background:#fbf4e6}
+.hero{min-height:430px;padding:78px 34px 46px;background:
+radial-gradient(circle at 88% 20%,#b7c6aa 0 8%,transparent 8.5%),
+radial-gradient(circle at 98% 34%,#d8b4a8 0 11%,transparent 11.5%),
+linear-gradient(145deg,#fbf2dd,#f5e9cb)}
+.hero:before{content:"";position:absolute;left:24px;bottom:22px;width:110px;height:72px;background:#fff9e9;border:1px solid #d6c8ad;box-shadow:4px 5px 0 #b5aa9440;transform:rotate(-3deg)}
+.hero .jp{position:relative;z-index:2}
+.desk{padding-top:38px}.cards{gap:16px;padding:4px}.card{border-radius:2px;box-shadow:5px 7px 0 #8f836f26;transition:.15s}.card:active{transform:translateY(3px) rotate(0)}
+.card:before{content:"";position:absolute;width:45px;height:13px;top:-6px;left:50%;transform:translateX(-50%) rotate(-2deg);background:#f3e6c9aa}
+.card:nth-child(2):before{background:#d7b6adaa}.card:nth-child(3):before{background:#d9cc9aaa}.card:nth-child(4):before{background:#b8c8b2aa}
+.shelf{margin:8px 14px 28px;border:1px solid #d1c4aa;border-radius:4px;box-shadow:5px 6px 0 #9f91772a;background:#f3e8d2}
+.sample{transform:rotate(-.25deg);box-shadow:7px 8px 0 #a99b8133}
