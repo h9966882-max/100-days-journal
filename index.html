@@ -10,46 +10,16 @@
 <body>
 <div id="authGate" class="auth-gate"><div class="login-card"><span class="login-flower">❀</span><p class="eyebrow">PRIVATE JOURNAL</p><h2>おかえりなさい。</h2><p>この書斎は、ログインした人だけ。</p><form id="loginForm"><input id="email" type="email" placeholder="メールアドレス" autocomplete="email" required><input id="password" type="password" placeholder="パスワード" autocomplete="current-password" required><button type="submit">書斎へ入る</button><p id="loginMsg" class="login-msg"></p></form></div></div>
 <div id="appShell" hidden>
-<main class="journal">
-<section class="hero">
-  <div class="hero-doodle">✿</div><span class="tape tape-a"></span><span class="tape tape-b"></span>
-  <p class="eyebrow">100 DAYS · LITTLE QUESTIONS</p>
-  <h1>100 Days <em>Journal</em></h1>
-  <p class="jp">100の問いと、寄り道する書斎。</p>
-  <p class="tiny-note">答えたい日に、答えたい問いを。</p>
-</section>
+<main class="journal-v1">
+<header class="topbar"><span>100 DAYS JOURNAL</span><button id="logoutBtn" class="top-logout">logout</button></header>
+<section class="cover"><div class="cover-flower f-a">🌻</div><div class="cover-flower f-b">🌷</div><div class="cover-flower f-c">🌿</div><span class="cover-tape"></span><p class="kicker">A LITTLE BOOK OF QUESTIONS</p><h1><span>100</span> Days<br><em>Journal</em></h1><p class="cover-copy">100の問いと、寄り道する書斎。</p><div class="cover-label">SEP 25 — DEC 31 · 2026</div><div class="cover-sticker">答えたい日に<br>答えたい問いを。</div></section>
+<nav class="tabs"><button class="tab active" data-target="today">TODAY</button><button class="tab" data-target="original">ORIGINAL</button><button class="tab" data-target="follow">FOLLOW</button><button class="tab" data-target="scraps">SCRAPS</button></nav>
+<section id="today" class="page-panel active"><div class="page-head"><span class="stamp">TODAY</span><h2>今日のページ</h2><p>ひとつだけ、開いてみる。</p></div><article class="question-sheet"><span class="washitape"></span><p>QUESTION OF THE DAY</p><div class="q-day">027</div><h3>最近、「いい匂いだな」と思って<br>立ち止まったのは、どんな匂い？</h3><p>03｜からだと感覚</p><button class="talk">☕ 篤史と話す</button></article><div class="tiny-scraps"><span>🌼</span><p>うまく答えなくていい。<br>寄り道も、今日のページ。</p><span>📎</span></div></section>
+<section id="original" class="page-panel"><div class="page-head"><span class="stamp green-stamp">ORIGINAL</span><h2>100の問い</h2><p>10の章。どこからでも。</p></div><div class="chapter-grid"><button><b>01</b><span>いまの私</span><i>🌱</i></button><button><b>02</b><span>好きと嫌い</span><i>🌷</i></button><button><b>03</b><span>からだと感覚</span><i>🍋</i></button><button><b>04</b><span>人とのあいだ</span><i>🫧</i></button><button><b>05</b><span>選ぶ私</span><i>✂️</i></button><button><b>06</b><span>これまでの私</span><i>📜</i></button><button><b>07</b><span>まだ知らない私</span><i>🪻</i></button><button><b>08</b><span>世界を見る私</span><i>🌍</i></button><button><b>09</b><span>遊ぶ私</span><i>🎈</i></button><button><b>10</b><span>これからの私</span><i>🌻</i></button></div></section>
+<section id="follow" class="page-panel"><div class="page-head"><span class="stamp yellow-stamp">FOLLOW</span><h2>Journal Shelf</h2><p>気になる一冊だけ。</p></div><div class="journal-covers"><button class="jc sunflower"><small>FOLLOW 01</small><span>🌻</span><strong>hotate_mom</strong></button><button class="jc tulip"><small>FOLLOW 02</small><span>🌷</span><strong>parumama_journalll</strong></button><button class="jc berry"><small>FOLLOW 03</small><span>🫐</span><strong>i_am_aioh</strong></button><button class="jc leaf"><small>FOLLOW 04</small><span>🌿</span><strong>haruko117</strong></button><button class="jc violet"><small>FOLLOW 05</small><span>🪻</span><strong>empty shelf</strong></button><button class="jc orange"><small>FOLLOW 06</small><span>🍊</span><strong>empty shelf</strong></button></div></section>
+<section id="scraps" class="page-panel"><div class="page-head"><span class="stamp purple-stamp">SCRAPS</span><h2>Little Findings</h2><p>おしゃべりの途中で拾ったもの。</p></div><div class="scrap-wall"><div class="scrap s1">「慈悲はある。<br>境界線はもっとある。」<span>✦</span></div><div class="scrap s2">ここには、小さな発見が増えていく。<span>🌿</span></div><div class="scrap s3">Favorites<br><small>もう一度ひらきたい問い</small><span>⭐</span></div></div></section>
+<footer class="v1-footer">まだ開いていない問いも、ちゃんと本棚にいる。</footer></main>
 
-<section class="desk">
- <div class="section-title"><span>☕</span><div><small>TODAY'S DESK</small><h2>今日は、どこへ寄り道する？</h2></div></div>
- <div class="desk-scene">
-  <button class="object notebook" data-note="Original 100"><span class="elastic"></span><small>ORIGINAL</small><strong>100</strong><em>questions</em><span class="label">Original 100</span></button>
-  <button class="object stack" data-note="Follow Journals"><span class="mini-book b1">01</span><span class="mini-book b2">02</span><span class="mini-book b3">03</span><span class="mini-book b4">04</span><span class="stack-label">Follow<br>Journals</span></button>
-  <button class="object memo" data-note="Little Findings"><span>✦</span><strong>Little<br>Findings</strong><small>拾った言葉</small></button>
-  <button class="object bookmark" data-note="Favorites"><span>★</span><strong>Favorites</strong><small>もう一度ひらく</small></button>
-  <span class="pencil">✎</span><span class="flower">❀</span>
- </div>
-</section>
-
-<section class="shelf">
- <div class="section-title"><span>📚</span><div><small>JOURNAL SHELF</small><h2>問いの本棚</h2></div></div>
- <div class="books">
-  <button class="book original" data-note="Original 100"><span>ORIGINAL</span><strong>100</strong><i>questions</i></button>
-  <button class="book f1" data-note="hotate_mom"><span>FOLLOW 01</span><strong>hotate</strong><i>mom</i></button>
-  <button class="book f2" data-note="parumama_journalll"><span>FOLLOW 02</span><strong>paru</strong><i>journal</i></button>
-  <button class="book f3" data-note="i_am_aioh"><span>FOLLOW 03</span><strong>aioh</strong><i>journal</i></button>
-  <button class="book f4" data-note="haruko117"><span>FOLLOW 04</span><strong>haruko</strong><i>journal</i></button>
- </div>
- <p class="note">全部追わなくていい。気になった問いだけ、そっと開く。</p>
-</section>
-
-<section class="sample">
- <div class="paperclip">⌇</div><small>QUESTION OF THE DAY</small><div class="day">DAY 027</div>
- <h2>最近、「いい匂いだな」と思って<br>立ち止まったのは、どんな匂い？</h2>
- <p>03｜からだと感覚</p><button class="talk">☕ 篤史と話す</button>
-</section>
-<footer>未回答は「遅れ」ではなく、<br><b>まだ開いていない問い。</b></footer>
-</main>
-<button id="logoutBtn" class="logout" type="button">ログアウト</button>
 </div>
 <div class="toast" id="toast"></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
