@@ -1,0 +1,1 @@
+const toast=document.getElementById('toast');document.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{toast.textContent=b.dataset.note?b.dataset.note+' — Visual PoC':'ここからChatGPTへ戻る導線を接続予定';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1800)}));
