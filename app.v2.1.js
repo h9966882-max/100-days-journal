@@ -11,7 +11,7 @@
   const JOURNALS=[['hotate_mom','#f0d887','sunflower.webp'],['parumama_journalll','#edd0d5','pink-flower.webp'],['i_am_aioh','#c5d6e1','books.webp'],['haruko117','#cbdcbb','pink-flower.webp'],[null,'#e0d7e9','sunflower.webp'],[null,'#edd8bb','books.webp']];
   const $=id=>document.getElementById(id), gate=$('authGate'),shell=$('appShell'),msg=$('loginMsg'),dialog=$('readerDialog');
   let client,userId=null,generation=0,loading=false,controller=null,lastTry=0,lastSuccess=null;
-  let questions=[],entries=new Map(),selected=PREVIEW,scrapMode='discoveries',toastTimer;
+  let questions=[],entries=new Map(),selected=PREVIEW,scrapMode='discoveries',toastTimer;\n  const answeredTime=e=>{const d=e?.answered_on?Date.parse(e.answered_on+'T00:00:00Z'):0;return Number.isFinite(d)?d:0;};\n  function latestAnsweredQuestion(){return questions.filter(q=>{const e=entryFor(q);return e&&(e.status==='done'||e.answer||e.discovery||e.note||e.answered_on);}).sort((a,b)=>{const ea=entryFor(a),eb=entryFor(b);return answeredTime(eb)-answeredTime(ea)||Number(b.day||0)-Number(a.day||0);})[0]||null;}
   const element=(tag,className,text)=>{const n=document.createElement(tag);if(className)n.className=className;if(text!==undefined)n.textContent=text;return n;};
   const entryFor=q=>entries.get(String(q.id));
   function art(file){const i=element('img','art');i.src='assets/'+file;i.alt='';i.loading='lazy';return i;}
@@ -85,7 +85,7 @@
     if(data.member===false){questions=[];entries=new Map();lastSuccess=null;renderQuestion(PREVIEW);renderScraps();buildFollowShelf();return;}
     questions=data.questions.filter(q=>typeof q.question==='string');entries=new Map(data.entries.map(e=>[String(e.question_id),e]));
     lastSuccess=data.sync?.last_success_at||lastSuccess;
-    const next=questions.find(q=>q.notion_page_id===selected.notion_page_id)||questions.find(q=>q.journal==='Original 100'&&q.day===1)||PREVIEW;
+    const latest=latestAnsweredQuestion();\n    const keepSelected=selected&&selected.id!==PREVIEW.id&&questions.find(q=>q.notion_page_id===selected.notion_page_id);\n    const next=keepSelected||latest||questions.find(q=>q.journal==='Original 100'&&q.day===1)||PREVIEW;
     renderQuestion(next);renderScraps();buildFollowShelf();
   }
   async function refreshData(manual=false){
