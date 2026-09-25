@@ -1,0 +1,5 @@
+/* Keep the approved artwork/layout; only make sync controls wrap on phones. */
+.sync-strip{flex-wrap:wrap;gap:8px 14px}
+.sync-strip p{flex-basis:100%;min-width:0;overflow-wrap:anywhere}
+.sync-strip .dialog-link{font-size:10px;min-height:40px}
+#entryDate{font-size:10px;color:var(--muted);margin-top:-22px;margin-bottom:22px}

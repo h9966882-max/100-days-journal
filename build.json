@@ -1,10 +1,12 @@
 {
-  "version": "2.0.0-assets",
-  "release": "generated-artwork-integration",
+  "version": "2.1.0-sync",
+  "release": "owner-only-notion-sync",
   "canonical_store": "Notion",
-  "notion_auto_sync": "not_implemented",
+  "notion_auto_sync": "implemented_requires_secret_setup_and_live_verification",
   "questions_fallback": "explicit_preview_day_1",
   "private_answers_in_static_files": false,
   "assets": ["sunflower.webp", "pink-flower.webp", "books.webp", "coffee-small.webp", "floral-top.webp", "floral-base.webp"],
-  "local_test": {"engine":"Chromium", "widths":[320,375,390,430,1280], "auth_transport":"mocked", "device_test":"not_yet", "panels_per_width":4}
+  "sync_triggers": ["sign_in", "visible_every_30_seconds", "return_to_page", "manual"],
+  "background_while_closed": false,
+  "local_test": {"server_mock_cases":15,"chromium_dom_cases":8,"live_notion_auth_rls_test":"pending"}
 }

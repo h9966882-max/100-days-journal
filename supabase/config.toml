@@ -1,0 +1,2 @@
+[functions.j100-sync]
+verify_jwt = true
