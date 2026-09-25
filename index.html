@@ -11,45 +11,43 @@
 <div id="authGate" class="auth-gate"><div class="login-card"><span class="login-flower">❀</span><p class="eyebrow">PRIVATE JOURNAL</p><h2>おかえりなさい。</h2><p>この書斎は、ログインした人だけ。</p><form id="loginForm"><input id="email" type="email" placeholder="メールアドレス" autocomplete="email" required><input id="password" type="password" placeholder="パスワード" autocomplete="current-password" required><button type="submit">書斎へ入る</button><p id="loginMsg" class="login-msg"></p></form></div></div>
 <div id="appShell" hidden>
 <main class="journal">
-  <section class="hero">
-    <span class="tape tape-a"></span><span class="tape tape-b"></span>
-    <div class="sprig">❀</div>
-    <p class="eyebrow">100 DAYS · LITTLE QUESTIONS</p>
-    <h1>100 Days<br><em>Journal</em></h1>
-    <p class="jp">100の問いと、寄り道する書斎。</p>
-    <div class="date">2026.09.25 — 12.31</div>
-  </section>
+<section class="hero">
+  <div class="hero-doodle">✿</div><span class="tape tape-a"></span><span class="tape tape-b"></span>
+  <p class="eyebrow">100 DAYS · LITTLE QUESTIONS</p>
+  <h1>100 Days <em>Journal</em></h1>
+  <p class="jp">100の問いと、寄り道する書斎。</p>
+  <p class="tiny-note">答えたい日に、答えたい問いを。</p>
+</section>
 
-  <section class="desk">
-    <div class="section-title"><span>☕</span><div><small>TODAY'S DESK</small><h2>今日は、どこへ寄り道する？</h2></div></div>
-    <div class="cards">
-      <button class="card green" data-note="Original 100"><span class="clip">⌇</span><b>01</b><h3>Original 100</h3><p>10の章をめぐる<br>100のオリジナル質問。</p><span class="go">ひらく →</span></button>
-      <button class="card butter" data-note="Follow Journals"><b>02</b><h3>Follow<br>Journals</h3><p>SNSで出会った問いの本棚。</p><span class="go">本棚へ →</span></button>
-      <button class="card lilac" data-note="Little Findings"><b>03</b><h3>Little<br>Findings</h3><p>おしゃべりの途中で<br>拾った言葉。</p><span class="go">のぞく →</span></button>
-      <button class="card coral" data-note="Favorites"><b>04</b><h3>Favorites</h3><p>もう一度ひらきたい問い。</p><span class="go">栞を見る →</span></button>
-    </div>
-  </section>
+<section class="desk">
+ <div class="section-title"><span>☕</span><div><small>TODAY'S DESK</small><h2>今日は、どこへ寄り道する？</h2></div></div>
+ <div class="desk-scene">
+  <button class="object notebook" data-note="Original 100"><span class="elastic"></span><small>ORIGINAL</small><strong>100</strong><em>questions</em><span class="label">Original 100</span></button>
+  <button class="object stack" data-note="Follow Journals"><span class="mini-book b1">01</span><span class="mini-book b2">02</span><span class="mini-book b3">03</span><span class="mini-book b4">04</span><span class="stack-label">Follow<br>Journals</span></button>
+  <button class="object memo" data-note="Little Findings"><span>✦</span><strong>Little<br>Findings</strong><small>拾った言葉</small></button>
+  <button class="object bookmark" data-note="Favorites"><span>★</span><strong>Favorites</strong><small>もう一度ひらく</small></button>
+  <span class="pencil">✎</span><span class="flower">❀</span>
+ </div>
+</section>
 
-  <section class="shelf">
-    <div class="section-title"><span>📚</span><div><small>JOURNAL SHELF</small><h2>問いの本棚</h2></div></div>
-    <div class="books">
-      <div class="book original"><span>ORIGINAL</span><strong>100</strong><i>questions</i></div>
-      <div class="book f1"><span>FOLLOW 01</span><strong>hotate</strong><i>mom</i></div>
-      <div class="book f2"><span>FOLLOW 02</span><strong>paru</strong><i>journal</i></div>
-      <div class="book f3"><span>FOLLOW 03</span><strong>aioh</strong><i>journal</i></div>
-      <div class="book f4"><span>FOLLOW 04</span><strong>haruko</strong><i>journal</i></div>
-    </div>
-    <p class="note">全部追わなくていい。気になった問いだけ、そっと開く。</p>
-  </section>
+<section class="shelf">
+ <div class="section-title"><span>📚</span><div><small>JOURNAL SHELF</small><h2>問いの本棚</h2></div></div>
+ <div class="books">
+  <button class="book original" data-note="Original 100"><span>ORIGINAL</span><strong>100</strong><i>questions</i></button>
+  <button class="book f1" data-note="hotate_mom"><span>FOLLOW 01</span><strong>hotate</strong><i>mom</i></button>
+  <button class="book f2" data-note="parumama_journalll"><span>FOLLOW 02</span><strong>paru</strong><i>journal</i></button>
+  <button class="book f3" data-note="i_am_aioh"><span>FOLLOW 03</span><strong>aioh</strong><i>journal</i></button>
+  <button class="book f4" data-note="haruko117"><span>FOLLOW 04</span><strong>haruko</strong><i>journal</i></button>
+ </div>
+ <p class="note">全部追わなくていい。気になった問いだけ、そっと開く。</p>
+</section>
 
-  <section class="sample">
-    <span class="pin">✦</span><small>QUESTION OF THE DAY</small>
-    <div class="day">DAY 027</div>
-    <h2>最近、「いい匂いだな」と思って<br>立ち止まったのは、どんな匂い？</h2>
-    <p>03｜からだと感覚</p>
-    <button class="talk">☕ 篤史と話す</button>
-  </section>
-  <footer>答えたい日に、答えたい問いを。<br><b>未回答は「遅れ」ではなく、まだ開いていない問い。</b></footer>
+<section class="sample">
+ <div class="paperclip">⌇</div><small>QUESTION OF THE DAY</small><div class="day">DAY 027</div>
+ <h2>最近、「いい匂いだな」と思って<br>立ち止まったのは、どんな匂い？</h2>
+ <p>03｜からだと感覚</p><button class="talk">☕ 篤史と話す</button>
+</section>
+<footer>未回答は「遅れ」ではなく、<br><b>まだ開いていない問い。</b></footer>
 </main>
 <button id="logoutBtn" class="logout" type="button">ログアウト</button>
 </div>
